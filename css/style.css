@@ -185,7 +185,7 @@ span.icon {
 .banner-text {
     text-align: center;
     width: 80%;
-    margin: 2em auto;
+    margin: 11.9em auto;
     padding: 2em 0;
     background: rgba(0, 0, 0, 0.16);
     outline: 6px solid rgba(255, 255, 255, 0.03);
@@ -229,7 +229,6 @@ b {
 
 span.span1 {
     display: inline-block;
-    width: 350px;
     color: #fff;
     position: relative;
     white-space: nowrap;
@@ -238,27 +237,22 @@ span.span1 {
     font-weight: 600;
     top: 0;
     left: 0;
-    -webkit-animation: move 5s;
+    -webkit-animation: move 4s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-delay: 1s;
 }
 
 @keyframes move {
-    0% {
+    15% {
         top: 0px;
     }
-    20% {
+    40% {
         top: -50px;
     }
-    40% {
+    70% {
         top: -100px;
-    }
-    60% {
-        top: -150px;
-    }
-    80% {
-        top: -200px;
-    }
+    
+    
 }
 
 
