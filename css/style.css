@@ -1409,12 +1409,15 @@ ul.w3-links li a i.fa:hover {
     display: inline-block;
 }
 
-span.icon_twitter {
+span.icon_linkedin {
     background: #1da1f2;
 }
 
 span.icon_facebook {
     background: #3b5998;
+}
+span.icon_fiverr {
+    background: #00b22d;
 }
 
 span.icon_dribbble {
