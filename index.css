@@ -34,7 +34,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     min-height: 100vh;
-    
+
 }
 
 .hello-world-container {
@@ -57,11 +57,19 @@ body {
     flex-shrink: 1;
 }
 
+.name {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    color: rgba(0, 128, 0, 0.617);
+}
+
 .social-link {
     background-color: #efefef;
     border-radius: 16px;
     padding: 16px;
     text-decoration: none;
     color: unset;
-    
+
 }
