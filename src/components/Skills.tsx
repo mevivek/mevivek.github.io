@@ -36,12 +36,7 @@ const Skills = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
             </svg>
           )
-        }
-      ]
-    },
-    {
-      title: 'Professional Skills',
-      categories: [
+        },
         {
           name: 'Soft Skills',
           items: softSkills,
@@ -80,7 +75,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="mx-auto max-w-3xl">
           {skillGroups.map((group, groupIndex) => (
             <motion.div
               key={group.title}
