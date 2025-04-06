@@ -1,0 +1,140 @@
+{
+  "personal": {
+    "name": "Vivek Kumar",
+    "title": "Software Developer",
+    "email": "developer.vivekumar@gmail.com",
+    "phone": "91-9999412535",
+    "location": "New Delhi, India",
+    "about": "Experienced Software Developer with 4 years of expertise in building user-centric mobile and web applications for Ed-tech and Food Delivery startups. Proficient in cross-platform development using Flutter, Android (Java/Kotlin), and ReactJS/React Native, demonstrating adaptability and a wide skill set. Passionate about creating innovative solutions that address real-world problems, with a proven track record of successful app development and deployment.",
+    "image": "/profile.jpg",
+    "social": {
+      "github": "https://github.com/mevivek",
+      "linkedin": "https://linkedin.com/in/mevivek"
+    }
+  },
+  "skills": {
+    "programmingLanguages": ["Java", "Kotlin", "Dart", "JavaScript", "TypeScript"],
+    "frameworks": ["Android", "Jetpack Compose", "Flutter", "ReactJS", "React Native"],
+    "cloudTechnologies": ["GCP", "Firebase"],
+    "versionControl": ["Git"],
+    "softSkills": ["Teamwork", "Communication", "Problem-solving", "Adaptability", "Attention to Detail"]
+  },
+  "experience": [
+    {
+      "title": "Android Developer",
+      "company": "Parking Base",
+      "period": "Oct 2024 - Present",
+      "description": "Leading Android development initiatives and implementing modern Android practices.",
+      "achievements": [
+        "Android App: Allow garage or parking attendant to issue and manage parking tickets.",
+        "Admin Dashboard: Backoffice to manage garages and companies and its devices."
+      ],
+      "technologies": ["Android", "Java", "XML", "ReactJS"]
+    },
+    {
+      "title": "Software Developer",
+      "company": "Think Cloudly",
+      "period": "Jan 2024 - July 2024",
+      "description": "Developed and maintained multiple applications for the platform.",
+      "achievements": [
+        "Android App: To login and display user's courses registered with Think Cloudly.",
+        "Admin Dashboard: A dashboard to manage data hosted on AWS DynamoDB.",
+        "Admin Dashboard Backend: A Rest API using NodeJS + ExpressJS"
+      ],
+      "technologies": ["Android", "ReactJS", "NodeJS", "ExpressJS", "AWS DynamoDB"]
+    },
+    {
+      "title": "Software Development Engineer",
+      "company": "Filo Edtech",
+      "period": "May 2022 - October 2023",
+      "description": "Developed and maintained mobile and web applications.",
+      "achievements": [
+        "Developed and maintained mobile and web applications using Android, Flutter, and ReactJS.",
+        "Used Kotlin, MVVM, Dart and TypeScript.",
+        "Collaborated closely with UI/UX designers to improve app usability and user experience.",
+        "Implemented efficient data management strategies.",
+        "Contributed to the development of new features and functionalities for existing applications."
+      ],
+      "technologies": ["Android", "Flutter", "ReactJS", "Kotlin", "MVVM", "Dart", "TypeScript"],
+      "links": {
+        "student": "https://student-app-link",
+        "tutor": "https://tutor-app-link"
+      }
+    },
+    {
+      "title": "Software Developer",
+      "company": "Fastor7 Technologies",
+      "period": "July 2020 - May 2022",
+      "description": "Full-stack development role focusing on mobile and web applications.",
+      "achievements": [
+        "Developed native Android apps using Java and Kotlin.",
+        "Developed Web Apps and admin panel using ReactJS.",
+        "Utilised React Native for cross-platform applications.",
+        "Developed responsive and user-friendly web applications using ReactJS."
+      ],
+      "technologies": ["Android", "Java", "Kotlin", "ReactJS", "TypeScript", "React Native"]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "MyEduGate",
+      "period": "November 2019 - July 2020",
+      "description": "Started career as an Android developer.",
+      "achievements": [
+        "Built and launched multiple Android applications using native development techniques.",
+        "Collaborated with senior engineers to learn best practices and acquire new skills.",
+        "Developed and implemented user interfaces according to design specifications.",
+        "Contributed to code reviews and technical documentation."
+      ],
+      "technologies": ["Android", "Java", "Kotlin"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "NPTEL Engineering Courses",
+      "description": "Designed and developed a user-friendly Android application for over 100,000 users, providing access to educational content from the NPTEL platform.",
+      "technologies": ["MVVM", "Kotlin", "Coroutines", "Node.js", "Google Cloud", "YouTube API"],
+      "achievements": [
+        "Successfully launched on Play Store",
+        "Implemented Node.js backend on Google Cloud",
+        "Integrated YouTube API for content management"
+      ],
+      "links": {
+        "live": "https://play.google.com/store/apps/details?id=your-app-id"
+      }
+    },
+    {
+      "title": "Linux Commands",
+      "description": "Android application showcasing different Linux Commands across various categories with more than 200 commands.",
+      "technologies": ["MVVM", "Material 3", "Dart", "Flutter"],
+      "period": "Nov 2023 - May2024",
+      "links": {
+        "live": "https://play.google.com/store/apps/details?id=your-app-id"
+      }
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science and Engineering",
+      "institution": "Dr Akhilesh Das Gupta Institute of Technology & Management",
+      "period": "2016 - 2020"
+    }
+  ],
+  "languages": ["English", "Hindi"],
+  "extracurricular": [
+    {
+      "title": "Technical Head",
+      "organization": "The Campus Chronicles",
+      "period": "August 2018 - November 2019"
+    },
+    {
+      "title": "Technical Head",
+      "organization": "Entrepreneurship Cell ADGITM",
+      "period": "October 2017 - August 2019"
+    },
+    {
+      "title": "Smart India Hackathon Finalist",
+      "year": "2020"
+    }
+  ]
+} 
