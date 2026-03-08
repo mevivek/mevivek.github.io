@@ -4,29 +4,24 @@
 
 @layer base {
   body {
-    @apply bg-gray-900 text-gray-100;
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
     font-family: 'Inter', sans-serif;
+  }
+
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  /* Better focus indicators */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-light dark:outline-primary-dark;
   }
 }
 
 @layer components {
-  .sidebar-icon {
-    @apply w-5 h-5 text-yellow-400;
-  }
-  
-  .nav-link {
-    @apply text-gray-400 hover:text-yellow-400 transition-colors duration-200;
-  }
-  
-  .nav-link.active {
-    @apply text-yellow-400 border-b-2 border-yellow-400;
-  }
-  
   .section-title {
-    @apply text-2xl font-bold mb-6 text-gray-100;
-  }
-  
-  .card {
-    @apply bg-gray-800 rounded-lg p-6 shadow-lg;
+    @apply text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100;
   }
 }

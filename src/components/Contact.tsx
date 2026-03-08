@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { getPersonalInfo } from '../utils/portfolio';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
+
 const Contact = () => {
   const { email, phone, location, social } = getPersonalInfo();
+  const [formStatus, setFormStatus] = useState<FormStatus>('idle');
 
   const contactInfo = [
     {
@@ -54,6 +57,34 @@ const Contact = () => {
       )
     }
   ];
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${email}`, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+        form.reset();
+        setTimeout(() => setFormStatus('idle'), 4000);
+      } else {
+        setFormStatus('error');
+        setTimeout(() => setFormStatus('idle'), 4000);
+      }
+    } catch {
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 4000);
+    }
+  };
 
   return (
     <section id="contact" className="py-20 px-4">
@@ -110,6 +141,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-primary-light dark:text-gray-400 dark:hover:text-primary-dark transition-colors"
+                    aria-label={`Visit my ${social.name} profile`}
                   >
                     {social.icon}
                   </a>
@@ -125,7 +157,7 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 rounded-lg p-8 border border-gray-200/20 dark:border-gray-700/20 shadow-lg"
           >
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
                   Name
@@ -133,6 +165,8 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  required
                   className="block w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-900/50 p-3 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-light dark:focus:border-primary-dark focus:ring-2 focus:ring-primary-light/20 dark:focus:ring-primary-dark/20"
                   placeholder="Your name"
                 />
@@ -144,6 +178,8 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  required
                   className="block w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-900/50 p-3 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-light dark:focus:border-primary-dark focus:ring-2 focus:ring-primary-light/20 dark:focus:ring-primary-dark/20"
                   placeholder="your.email@example.com"
                 />
@@ -154,6 +190,8 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
+                  required
                   rows={4}
                   className="block w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-900/50 p-3 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-light dark:focus:border-primary-dark focus:ring-2 focus:ring-primary-light/20 dark:focus:ring-primary-dark/20"
                   placeholder="Your message"
@@ -161,10 +199,21 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-3 px-4 rounded-lg text-sm font-medium text-white bg-primary-light hover:bg-primary-light/90 dark:bg-primary-dark dark:hover:bg-primary-dark/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                disabled={formStatus === 'submitting'}
+                className="w-full flex justify-center py-3 px-4 rounded-lg text-sm font-medium text-white bg-primary-light hover:bg-primary-light/90 dark:bg-primary-dark dark:hover:bg-primary-dark/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-light dark:focus:ring-primary-dark disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
               </button>
+              {formStatus === 'success' && (
+                <p className="text-sm text-green-600 dark:text-green-400 text-center" role="status">
+                  Message sent successfully!
+                </p>
+              )}
+              {formStatus === 'error' && (
+                <p className="text-sm text-red-600 dark:text-red-400 text-center" role="alert">
+                  Failed to send. Please email me directly at {email}.
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
@@ -173,4 +222,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;
